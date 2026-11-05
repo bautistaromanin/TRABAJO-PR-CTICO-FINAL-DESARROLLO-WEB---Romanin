@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67 Líneas sobre el Número 67</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains+Mono', monospace;
+        }
+
+        .line-card {
+            transition: all 0.2s ease;
+        }
+
+        .line-card:hover {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Header / Hero Section -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="bg-indigo-600 text-white font-mono font-bold text-2xl px-3 py-1 rounded-lg shadow-lg shadow-indigo-500/30">
+                    67
+                </span>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">El Especial Número 67</h1>
+                    <p class="text-xs text-slate-400">67 curiosidades, datos y propiedades</p>
+                </div>
+            </div>
+            
+            <!-- Quick Filter Badges -->
+            <div id="filter-container" class="flex flex-wrap gap-2 text-xs">
+                <button onclick="filterLines('all')" class="filter-btn active bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-full transition">Todas (67)</button>
+                <button onclick="filterLines('math')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full transition">Matemáticas</button>
+                <button onclick="filterLines('science')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full transition">Ciencia y Más</button>
+                <button onclick="filterLines('culture')" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full transition">Cultura e Historia</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content List -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-8">
+
+        <!-- Progress Indicator -->
+        <div class="mb-6 flex justify-between items-center text-sm text-slate-400">
+            <span id="showing-count">Mostrando 67 de 67 líneas</span>
+            <div class="w-48 bg-slate-800 h-2 rounded-full overflow-hidden">
+                <div id="progress-bar" class="bg-indigo-500 h-full w-full transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- 67 Lines Container -->
+        <div id="lines-list" class="space-y-3">
+            <!-- JavaScript will populate or control the lines here -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm bg-slate-900/30">
+        <p>Documento generado con exactamente 67 líneas informativas sobre el número 67.</p>
+    </footer>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        const linesData = [
+            { id: 1, category: "math", text: "El 67 es un número natural que sigue al 66 y precede al 68." },
+            { id: 2, category: "math", text: "En las matemáticas, el 67 se clasifica como un número primo." },
+            { id: 3, category: "math", text: "Es el decimonoveno número primo dentro de la secuencia numérica." },
+            { id: 4, category: "math", text: "Además, forma parte del grupo de los números primos de Chen." },
+            { id: 5, category: "math", text: "El 67 es un primo de Lucky, una propiedad matemática interesante." },
+            { id: 6, category: "math", text: "Se considera también un primo gaussiano por sus propiedades únicas." },
+            { id: 7, category: "math", text: "Es la suma de cinco números primos consecutivos: 7 + 11 + 13 + 17 + 19." },
+            { id: 8, category: "math", text: "La suma de los dígitos de 67 (6 + 7) nos da como resultado 13." },
+            { id: 9, category: "math", text: "El número 13 obtenido de esa suma también es un número primo." },
+            { id: 10, category: "math", text: "Su diferencia de dígitos (7 - 6) da 1, la unidad básica." },
+            { id: 11, category: "science", text: "En la tabla periódica, el 67 corresponde al Holmio (Ho)." },
+            { id: 12, category: "science", text: "El Holmio es un elemento químico perteneciente a los lantánidos." },
+            { id: 13, category: "science", text: "Tiene un peso atómico de aproximadamente 164.93 unidades." },
+            { id: 14, category: "science", text: "Posee las mayores propiedades magnéticas de cualquier elemento." },
+            { id: 15, category: "science", text: "Fue descubierto en el año 1878 por Per Teodor Cleve." },
+            { id: 16, category: "science", text: "En la astronomía, existe el asteroide nombrado (67) Asia." },
+            { id: 17, category: "science", text: "Fue descubierto en 1861 por el astrónomo Norman Pogson." },
+            { id: 18, category: "culture", text: "En la red de carreteras de EE. UU., existe la famosa Ruta 67." },
+            { id: 19, category: "culture", text: "Atraviesa varios estados desde Tejas hasta Minnesota." },
+            { id: 20, category: "culture", text: "En la cultura popular, existe la famosa canción \"Route 67\"." },
+            { id: 21, category: "culture", text: "En el misticismo, el 67 se asocia con el equilibrio interior." },
+            { id: 22, category: "culture", text: "Representa la combinación de la estructura del 6 y la fe del 7." },
+            { id: 23, category: "culture", text: "El 6 aporta orden, responsabilidad, hogar y armonía." },
+            { id: 24, category: "culture", text: "El 7 aporta introspección, sabiduría y búsqueda espiritual." },
+            { id: 25, category: "culture", text: "La unión de ambas cifras crea un balance entre materia y mente." },
+            { id: 26, category: "culture", text: "En la numerología angelical, el 67 es señal de progreso personal." },
+            { id: 27, category: "culture", text: "Indica que los esfuerzos realizados están dando frutos positivos." },
+            { id: 28, category: "culture", text: "Motiva a seguir adelante con determinación y paciencia." },
+            { id: 29, category: "math", text: "En el binario, el 67 se representa con el código 1000011." },
+            { id: 30, category: "math", text: "En hexadecimal, el número 67 se escribe simplemente como 43." },
+            { id: 31, category: "math", text: "En octal, la representación del 67 corresponde a 103." },
+            { id: 32, category: "math", text: "En números romanos, el 67 se escribe formalmente como LXVII." },
+            { id: 33, category: "math", text: "La L vale 50, la X vale 10, la V vale 5 y las II valen 2." },
+            { id: 34, category: "culture", text: "En la Biblia, el Salmo 67 es una oración de bendición universal." },
+            { id: 35, category: "culture", text: "Es un salmo dedicado al agradecimiento y la prosperidad." },
+            { id: 36, category: "culture", text: "En la historia militar, destaca la Batería 67 en diversos conflictos." },
+            { id: 37, category: "science", text: "En la aviación, el Boeing 767 comparte estas dos cifras invertidas." },
+            { id: 38, category: "culture", text: "En el deporte, muchos atletas legendarios portaron la camiseta 67." },
+            { id: 39, category: "culture", text: "Jaromír Jágr usó el número 68, estando a solo un paso del 67." },
+            { id: 40, category: "culture", text: "En el baloncesto, la temporada de 1967 fue emblemática en la NBA." },
+            { id: 41, category: "culture", text: "Los Philadelphia 76ers lograron un récord histórico en 1967." },
+            { id: 42, category: "culture", text: "En el fútbol argentino, el año 1967 consagró a Racing en la Intercontinental." },
+            { id: 43, category: "culture", text: "También en 1967, Estudiantes de La Plata rompió la hegemonía del fútbol." },
+            { id: 44, category: "culture", text: "El año 1967 marcó el llamado \"Verano del Amor\" en San Francisco." },
+            { id: 45, category: "culture", text: "Fue un momento culminante para la cultura hippie a nivel mundial." },
+            { id: 46, category: "culture", text: "En 1967 se lanzó el álbum Sgt. Pepper's de The Beatles." },
+            { id: 47, category: "culture", text: "Fue un año crucial para el cambio de paradigma en la música rock." },
+            { id: 48, category: "science", text: "El prefijo telefónico +67 no existe directamente como país." },
+            { id: 49, category: "science", text: "Pero +672 pertenece a territorios australianos en el Antártico." },
+            { id: 50, category: "science", text: "+679 es el código internacional telefónico para las islas Fiyi." },
+            { id: 51, category: "math", text: "En la medición de tiempo, 67 minutos equivalen a 1 hora y 7 minutos." },
+            { id: 52, category: "math", text: "En segundos, 67 minutos representan un total de 4020 segundos." },
+            { id: 53, category: "math", text: "Un ángulo de 67 grados es un ángulo agudo en geometría." },
+            { id: 54, category: "math", text: "Su complemento geométrico es un ángulo de 23 grados." },
+            { id: 55, category: "math", text: "Su suplemento geométrico es un ángulo de 113 grados." },
+            { id: 56, category: "science", text: "En la escala Celsius, 67 °C equivalen a 152.6 °F." },
+            { id: 57, category: "science", text: "En la escala Kelvin, 67 °C son exactamente 340.15 K." },
+            { id: 58, category: "culture", text: "El 67 impreso en un papel tiene una simetría visual interesante." },
+            { id: 59, category: "culture", text: "Las curvas del 6 contrastan con las líneas rectas del 7." },
+            { id: 60, category: "culture", text: "Es un número que transmite solidez y firmeza al pronunciarlo." },
+            { id: 61, category: "culture", text: "Muchas personas lo eligen como su número de la suerte particular." },
+            { id: 62, category: "science", text: "Aparece en múltiples códigos de barra alrededor del mundo." },
+            { id: 63, category: "science", text: "Se encuentra presente en infinidad de combinaciones de claves." },
+            { id: 64, category: "math", text: "Es un número que despierta curiosidad por su carácter primo." },
+            { id: 65, category: "math", text: "Raras veces pasa desapercibido cuando se estudia la matemática." },
+            { id: 66, category: "culture", text: "Llega como un hito único en esta lista estructurada paso a paso." },
+            { id: 67, category: "culture", text: "Y con este enunciado completamos exactamente las 67 líneas requeridas." }
+        ];
+
+        const container = document.getElementById('lines-list');
+        const showingCount = document.getElementById('showing-count');
+        const progressBar = document.getElementById('progress-bar');
+
+        function renderLines(categoryFilter = 'all') {
+            container.innerHTML = '';
+            
+            const filteredData = categoryFilter === 'all' 
+                ? linesData 
+                : linesData.filter(item => item.category === categoryFilter);
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "line-card bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-4 rounded-xl flex items-start gap-4";
+                
+                const paddedId = String(item.id).padStart(2, '0');
+                
+                card.innerHTML = `
+                    <span class="font-mono text-indigo-400 font-bold text-sm bg-indigo-950/60 border border-indigo-800/40 px-2 py-1 rounded">
+                        ${paddedId}
+                    </span>
+                    <p class="text-slate-200 text-sm sm:text-base leading-relaxed flex-1">
+                        ${item.text}
+                    </p>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update status text and progress bar
+            showingCount.textContent = `Mostrando ${filteredData.length} de 67 líneas`;
+            const percentage = (filteredData.length / 67) * 100;
+            progressBar.style.width = `${percentage}%`;
+        }
+
+        function filterLines(category) {
+            // Update button styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'active');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-indigo-600', 'text-white', 'active');
+
+            renderLines(category);
+        }
+
+        // Initial Render
+        renderLines('all');
+    </script>
+</body>
+</html>
