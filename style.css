@@ -1,12 +1,107 @@
 body {
-  background-color: #ffffff;
-  color: #333333;
-  font-family: Arial, sans-serif;
+    background-color: #F4F1EA;
+    color: #2B2B2B;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #D9534F;
+}
+
+header h1 {
+    color: #FFFFFF;
+    margin: 10px 0;
+}
+
+nav {
+    margin-top: 15px;
 }
 
 nav a {
-  background-color: #0055aa;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px;
+    background-color: #D9534F;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #FFFFFF;
+    color: #2B2B2B;
+}
+
+main {
+    width: 80%;
+    margin: 30px auto;
+}
+
+h2 {
+    color: #D9534F;
+    text-align: center;
+    font-size: 28px;
+}
+
+h3 {
+    color: #D9534F;
+}
+
+.caja {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #2B2B2B;
+}
+
+.caja img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    display: block;
+    margin: 15px auto;
+}
+
+.boton {
+    background-color: #D9534F;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #2B2B2B;
+}
+
+footer {
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #D9534F;
+    text-decoration: none;
+    margin: 0 10px;
 }
